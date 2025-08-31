@@ -1271,7 +1271,7 @@ const patterns = [
   }, {
     id: 'pumpkin-coaster',
     title: 'Pumpkin Coaster',
-    image: '/images/pumpkin-coaster.jpg',
+    image: '/images/pumpkin-coaster.png',
     description: 'This cute and functional pumpkin coaster is the perfect fall DIY to spruce up your space. Great for beginners and makes a cozy seasonal gift!',
     materials: [
       '5 mm crochet hook',
@@ -1323,7 +1323,7 @@ const patterns = [
   
       🍂 Perfect for mugs, candles, or cozy fall table settings!
     `,
-    video: 'pXTXzDLHsEs-tAKb'
+    video: 'c8ma5RwNAUA'
   }
   
   
