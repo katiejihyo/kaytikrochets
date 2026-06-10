@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ============================================
+   KAYTI KROCHETS — Design System
+   A cozy, handmade yarn-shop identity, refined.
+   ============================================ */
+
+@theme {
+  /* Palette — derived from natural yarn & wool tones */
+  --color-cream: #FBF7F0;        /* base background */
+  --color-shell: #F3EBDD;        /* warm card / section */
+  --color-rose: #C97B6E;         /* terracotta-rose primary accent */
+  --color-rose-deep: #B0655A;    /* hover state */
+  --color-sage: #8A9A7B;         /* secondary accent */
+  --color-sage-soft: #E3E8DC;    /* soft sage tint */
+  --color-cocoa: #4A3F38;        /* primary text */
+  --color-cocoa-soft: #6B5D52;   /* muted text */
+  --color-lavender: #EDE7F2;     /* soft section tint */
+
+  --font-display: 'Alex Brush', cursive;
+  --font-body: 'Jeju Myeongjo', serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-cocoa);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Font utilities (kept for backwards-compat with existing class names) */
+.alex-font { font-family: var(--font-display); }
+.jeju-font { font-family: var(--font-body); }
+
+/* ============================================
+   SIGNATURE ELEMENT — the "stitch line"
+   A dashed rule styled like a running crochet stitch.
+   ============================================ */
+.stitch-line {
+  border: none;
+  height: 0;
+  border-top: 2px dashed var(--color-rose);
+  opacity: 0.55;
+  margin: 0;
+}
+.stitch-line--sage { border-top-color: var(--color-sage); }
+
+/* Decorative eyebrow label */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-rose);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-rose);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  padding: 0.7rem 1.8rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-rose);
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-rose-deep);
+  border-color: var(--color-rose-deep);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-cocoa);
+  font-family: var(--font-body);
+  padding: 0.7rem 1.8rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-cocoa);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.btn-ghost:hover {
+  background-color: var(--color-cocoa);
+  color: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.nav-link {
+  position: relative;
+  font-family: var(--font-body);
+  color: var(--color-cocoa);
+  padding: 0.25rem 0.15rem;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-rose);
+  transition: width 0.25s ease;
+}
+.nav-link:hover { color: var(--color-rose); }
+.nav-link:hover::after { width: 100%; }
+.nav-link[aria-current="page"] { color: var(--color-rose); }
+.nav-link[aria-current="page"]::after { width: 100%; }
+
+/* ============================================
+   CARDS
+   ============================================ */
+.pattern-card {
+  background-color: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--color-shell);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.pattern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -16px rgba(74, 63, 56, 0.35);
+}
+.pattern-card__img {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Difficulty chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+}
+.chip--Beginner    { background: var(--color-sage-soft); color: #4d5a3f; }
+.chip--Intermediate{ background: #F5E1C8; color: #8a5a2b; }
+.chip--Advanced    { background: #F0D5D0; color: #9c463a; }
+
+/* Filter pills */
+.filter-pill {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-shell);
+  background: #fff;
+  color: var(--color-cocoa-soft);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-pill:hover { border-color: var(--color-rose); color: var(--color-rose); }
+.filter-pill[data-active="true"] {
+  background: var(--color-rose);
+  border-color: var(--color-rose);
+  color: var(--color-cream);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.social-btn {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #fff;
+  border: 1px solid var(--color-shell);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.social-btn:hover { background-color: var(--color-lavender); transform: translateY(-3px); }
+.social-btn img { width: 20px; height: 20px; }
+
+/* ============================================
+   PATTERN PAGE — instructions & interactive tools
+   ============================================ */
+.instructions strong { color: var(--color-rose-deep); }
+.instructions { line-height: 1.85; color: var(--color-cocoa); }
+
+/* Step checklist */
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+.step-item:hover { background-color: var(--color-shell); }
+.step-item[data-done="true"] { opacity: 0.5; }
+.step-item[data-done="true"] .step-text { text-decoration: line-through; }
+.step-check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--color-sage);
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-item[data-done="true"] .step-check {
+  background-color: var(--color-sage);
+  border-color: var(--color-sage);
+}
+
+/* Row counter — feels like a physical clicker */
+.counter-display {
+  font-family: var(--font-body);
+  font-size: 3.5rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-cocoa);
+  line-height: 1;
+}
+.counter-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-shell);
+  background: #fff;
+  font-size: 1.5rem;
+  color: var(--color-cocoa);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter-btn:hover { background: var(--color-rose); color: #fff; border-color: var(--color-rose); transform: scale(1.05); }
+.counter-btn:active { transform: scale(0.92); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Visible keyboard focus */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2.5px solid var(--color-rose);
+  outline-offset: 2px;
+}
