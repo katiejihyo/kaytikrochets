@@ -84,7 +84,6 @@ const PatternPage = () => {
           <div className="flex flex-wrap items-center gap-2 mb-3">
             <span className={`chip chip--${pattern.difficulty}`}>{pattern.difficulty}</span>
             {pattern.category && <span className="chip" style={{ background: 'var(--color-lavender)', color: 'var(--color-cocoa-soft)' }}>{pattern.category}</span>}
-            {pattern.time && <span className="jeju-font text-sm text-cocoa-soft">· {pattern.time}</span>}
           </div>
           <h1 className="alex-font text-5xl sm:text-6xl text-cocoa">{pattern.title}</h1>
           <p className="jeju-font text-lg text-cocoa-soft mt-3 max-w-2xl">{pattern.description}</p>

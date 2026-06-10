@@ -87,7 +87,6 @@ const AllPatterns = () => {
                 <div className="p-5 flex flex-col gap-2 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className={`chip chip--${p.difficulty}`}>{p.difficulty}</span>
-                    {p.time && <span className="jeju-font text-xs text-cocoa-soft">· {p.time}</span>}
                   </div>
                   <h2 className="jeju-font text-lg text-cocoa">{p.title}</h2>
                   <p className="jeju-font text-sm text-cocoa-soft line-clamp-2">{p.description}</p>
