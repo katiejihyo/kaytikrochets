@@ -16,7 +16,6 @@ const AboutMe = () => {
       <Navbar />
       <main className="flex-1 max-w-4xl w-full mx-auto px-5 sm:px-8 py-12">
         <div className="text-center mb-12">
-          <p className="eyebrow mb-3">The maker behind the hook</p>
           <h1 className="alex-font text-5xl sm:text-6xl text-cocoa">About Me</h1>
         </div>
 
