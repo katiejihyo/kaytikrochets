@@ -1,6 +1,6 @@
-# Kayti Krochets 🧶
+# Kayti Krochets 
 
-A cozy, handmade-inspired site for free crochet patterns — each with written
+Site showcasing hand-made crochet designs from @kaytikrochets — each with written
 step-by-step instructions and a video tutorial.
 
 Built with React + Vite + Tailwind CSS v4, deployed on Netlify.
